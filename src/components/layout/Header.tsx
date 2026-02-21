@@ -88,18 +88,13 @@ const Header = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-14">
               {/* Logo */}
-              <a href="#" className="flex items-center gap-2.5 group">
-                <div className="w-9 h-9 rounded-full bg-background/20 flex items-center justify-center overflow-hidden">
-                  <img
-                    src={farajasoftLogo}
-                    alt="FarajaSoft Logo"
-                    className="h-7 w-auto group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <span className="text-primary-foreground font-display font-bold text-lg tracking-tight">
-                  FarajaSoft Ltd.
-                </span>
-              </a>
+              <a href="#" className="flex items-center group">
+              <img
+                src={farajasoftLogo}
+                alt="FarajaSoft Logo"
+                className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              />
+            </a>
 
               {/* Desktop Nav */}
               <nav className="hidden lg:flex items-center gap-1">
