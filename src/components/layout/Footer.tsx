@@ -91,13 +91,13 @@ const Footer = () => {
                 0752772590 / 0753142700
               </a>
               <a
-                href="mailto:info@farajasoft.co.ke"
+                href="mailto:info@farajasoft.com"
                 className="flex items-center gap-3 text-sm text-primary-foreground/50 hover:text-primary transition-colors group"
               >
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/8 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="w-3.5 h-3.5" />
                 </div>
-                info@farajasoft.co.ke
+                info@farajasoft.com
               </a>
               <div className="flex items-center gap-3 text-sm text-primary-foreground/50">
                 <div className="w-8 h-8 rounded-lg bg-primary-foreground/8 flex items-center justify-center">

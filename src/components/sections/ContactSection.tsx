@@ -75,7 +75,7 @@ const ContactSection = () => {
 
   const contactInfo = [
     { icon: Phone, label: "Phone", value: "0752772590 / 0753142700", href: "tel:0752772590" },
-    { icon: Mail, label: "Email", value: "info@farajasoft.co.ke", href: "mailto:info@farajasoft.co.ke" },
+    { icon: Mail, label: "Email", value: "info@farajasoft.com", href: "mailto:info@farajasoft.com" },
     { icon: MapPin, label: "Location", value: "Nairobi, Kenya", href: null },
   ];
 
