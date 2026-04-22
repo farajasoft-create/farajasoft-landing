@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-primary-foreground relative overflow-hidden">
+    <footer className="relative overflow-hidden text-primary-foreground" style={{ background: "#05070e" }}>
       {/* Background rings */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] border border-primary-foreground rounded-full -translate-y-1/2 translate-x-1/3" />

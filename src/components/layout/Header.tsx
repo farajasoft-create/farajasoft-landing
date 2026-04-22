@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Mail, Phone, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import farajasoftLogo from "@/assets/farajasoft-logo.png";
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40);
 
       const sections = ["about", "features", "why-us", "contact"];
       for (const id of sections.reverse()) {
@@ -40,88 +40,79 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Info Bar */}
-      <div
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "h-0 opacity-0 overflow-hidden" : "h-auto opacity-100"
-        }`}
-      >
-        <div className="bg-muted border-b border-border">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between py-1.5 text-xs text-muted-foreground">
-              <div className="flex items-center gap-4 sm:gap-6">
-                <a href="tel:0752772590" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-                  <Phone className="w-3 h-3" />
-                  <span className="hidden sm:inline">0752 772 590</span>
-                </a>
-                <a href="tel:0753142700" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-                  <Phone className="w-3 h-3" />
-                  <span className="hidden sm:inline">0753 142 700</span>
-                </a>
-              </div>
-              <div className="flex items-center gap-3">
-                {["twitter", "facebook", "instagram", "linkedin"].map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-200"
-                    aria-label={social}
-                  >
-                    <SocialIcon name={social} />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
       <header
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "top-0 py-0"
-            : "top-[33px] py-0"
+            ? "bg-card/90 backdrop-blur-xl shadow-2xl border-b border-border/50"
+            : "bg-transparent"
         }`}
       >
-        <div className="bg-gradient-primary shadow-md">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-14">
-              {/* Logo */}
-              <a href="#" className="flex items-center group">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <a href="#" className="flex items-center group shrink-0">
               <img
                 src={farajasoftLogo}
                 alt="FarajaSoft Logo"
-                className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className={`h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+                  isScrolled ? "" : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                }`}
               />
             </a>
 
-              {/* Desktop Nav */}
-              <nav className="hidden lg:flex items-center gap-1">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href + link.id}
-                    href={link.href}
-                    className={`px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
-                      activeSection === link.id
-                        ? "bg-background/20 text-primary-foreground"
-                        : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-background/10"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-0.5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href + link.id}
+                  href={link.href}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    isScrolled
+                      ? activeSection === link.id
+                        ? "bg-primary/15 text-primary"
+                        : "text-foreground/65 hover:text-foreground hover:bg-muted/60"
+                      : activeSection === link.id
+                        ? "bg-white/15 text-white"
+                        : "text-white/80 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-              {/* Mobile Menu Button */}
-              <button
-                className="lg:hidden p-2 text-primary-foreground rounded-lg hover:bg-background/10 transition-colors"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
+            {/* CTA */}
+            <div className="hidden lg:flex items-center gap-3">
+              <a
+                href="https://wa.me/254752772590?text=Hello%20FarajaSoft%2C%20I%20would%20like%20to%20request%20a%20demo."
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+                <Button
+                  size="sm"
+                  className={`rounded-full px-5 font-semibold transition-all duration-300 ${
+                    isScrolled
+                      ? "bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105"
+                      : "bg-white text-primary hover:bg-white/90 hover:scale-105 shadow-md"
+                  }`}
+                >
+                  Request Demo
+                </Button>
+              </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className={`lg:hidden p-2 rounded-lg transition-colors ${
+                isScrolled
+                  ? "text-foreground hover:bg-muted"
+                  : "text-white hover:bg-white/10"
+              }`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </header>
@@ -133,36 +124,45 @@ const Header = () => {
         }`}
       >
         <div
-          className="absolute inset-0 bg-background/95 backdrop-blur-2xl"
+          className="absolute inset-0 bg-background/97 backdrop-blur-2xl"
           onClick={() => setIsMenuOpen(false)}
         />
         <div className="relative h-full flex flex-col justify-center px-8">
-          <nav className="space-y-2">
+          {/* Mobile Logo */}
+          <div className="absolute top-5 left-8">
+            <img src={farajasoftLogo} alt="FarajaSoft Logo" className="h-10 w-auto" />
+          </div>
+
+          <nav className="space-y-1">
             {navLinks.map((link, i) => (
               <a
                 key={link.href + link.id}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center justify-between py-5 border-b border-border/30 text-3xl font-display font-bold text-foreground hover:text-primary transition-all duration-500 ${
+                className={`flex items-center justify-between py-4 border-b border-border/20 text-2xl font-display font-bold text-foreground hover:text-primary transition-all duration-500 ${
                   isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
                 }`}
-                style={{ transitionDelay: isMenuOpen ? `${i * 80 + 200}ms` : "0ms" }}
+                style={{ transitionDelay: isMenuOpen ? `${i * 70 + 150}ms` : "0ms" }}
               >
                 {link.label}
-                <ChevronRight className="w-6 h-6 text-muted-foreground" />
+                <ChevronRight className="w-5 h-5 text-muted-foreground" />
               </a>
             ))}
           </nav>
 
           <div
-            className={`mt-12 flex flex-col gap-3 transition-all duration-500 ${
+            className={`mt-10 transition-all duration-500 ${
               isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-            style={{ transitionDelay: isMenuOpen ? "500ms" : "0ms" }}
+            style={{ transitionDelay: isMenuOpen ? "450ms" : "0ms" }}
           >
-            <a href="https://wa.me/254752772590?text=Hello%20FarajaSoft%2C%20I%20would%20like%20to%20request%20a%20demo." target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+            <a
+              href="https://wa.me/254752772590?text=Hello%20FarajaSoft%2C%20I%20would%20like%20to%20request%20a%20demo."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+            >
               <Button
-                variant="default"
                 size="lg"
                 className="w-full bg-gradient-primary text-primary-foreground rounded-full text-base shadow-glow"
               >
@@ -174,38 +174,6 @@ const Header = () => {
       </div>
     </>
   );
-};
-
-const SocialIcon = ({ name }: { name: string }) => {
-  const size = "w-2.5 h-2.5";
-  switch (name) {
-    case "twitter":
-      return (
-        <svg className={size} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-      );
-    case "facebook":
-      return (
-        <svg className={size} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-        </svg>
-      );
-    case "instagram":
-      return (
-        <svg className={size} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-        </svg>
-      );
-    case "linkedin":
-      return (
-        <svg className={size} viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-        </svg>
-      );
-    default:
-      return null;
-  }
 };
 
 export default Header;

@@ -7,74 +7,74 @@
 
 @layer base {
   :root {
-    /* Primary - FarajaSoft Blue */
-    --primary: 220 85% 55%;
+    /* Primary - FarajaSoft Blue/Violet */
+    --primary: 220 85% 62%;
     --primary-foreground: 0 0% 100%;
-    
-    /* Secondary - FarajaSoft Magenta/Pink */
-    --secondary: 315 75% 55%;
+
+    /* Secondary - FarajaSoft Violet */
+    --secondary: 270 72% 62%;
     --secondary-foreground: 0 0% 100%;
-    
-    /* Background & Surfaces */
-    --background: 220 20% 98%;
-    --foreground: 230 25% 12%;
-    
-    --card: 0 0% 100%;
-    --card-foreground: 230 25% 12%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 12%;
-    
+
+    /* Background & Surfaces - Deep Dark Navy */
+    --background: 228 30% 6%;
+    --foreground: 220 18% 93%;
+
+    --card: 228 26% 10%;
+    --card-foreground: 220 18% 93%;
+
+    --popover: 228 26% 10%;
+    --popover-foreground: 220 18% 93%;
+
     /* Muted & Accent */
-    --muted: 220 20% 94%;
-    --muted-foreground: 230 10% 45%;
-    
-    --accent: 220 60% 95%;
-    --accent-foreground: 220 85% 45%;
-    
+    --muted: 228 22% 14%;
+    --muted-foreground: 220 12% 50%;
+
+    --accent: 228 28% 16%;
+    --accent-foreground: 220 80% 72%;
+
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     /* Borders & Inputs */
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 85% 55%;
-    
+    --border: 228 18% 18%;
+    --input: 228 18% 18%;
+    --ring: 220 85% 62%;
+
     --radius: 1rem;
-    
+
     /* Custom Design Tokens - FarajaSoft Brand */
-    --gradient-primary: linear-gradient(135deg, hsl(220 85% 55%) 0%, hsl(260 70% 55%) 50%, hsl(315 75% 55%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(220 30% 98%) 0%, hsl(260 20% 96%) 50%, hsl(220 25% 97%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(220 85% 55%) 0%, hsl(280 70% 55%) 50%, hsl(315 75% 55%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 99%) 100%);
-    --gradient-mesh: radial-gradient(at 40% 20%, hsl(220 85% 55% / 0.15) 0px, transparent 50%),
-                     radial-gradient(at 80% 0%, hsl(315 75% 55% / 0.12) 0px, transparent 50%),
-                     radial-gradient(at 0% 50%, hsl(260 70% 55% / 0.1) 0px, transparent 50%),
-                     radial-gradient(at 80% 50%, hsl(220 85% 55% / 0.08) 0px, transparent 50%),
-                     radial-gradient(at 0% 100%, hsl(315 75% 55% / 0.1) 0px, transparent 50%);
-    
-    --shadow-sm: 0 1px 2px 0 hsl(230 25% 15% / 0.04);
-    --shadow-md: 0 4px 12px -2px hsl(230 25% 15% / 0.08), 0 2px 4px -2px hsl(230 25% 15% / 0.04);
-    --shadow-lg: 0 12px 24px -4px hsl(230 25% 15% / 0.1), 0 4px 8px -4px hsl(230 25% 15% / 0.06);
-    --shadow-xl: 0 24px 48px -8px hsl(230 25% 15% / 0.12), 0 12px 16px -6px hsl(230 25% 15% / 0.08);
-    --shadow-glow: 0 0 40px -10px hsl(220 85% 55% / 0.4);
-    --shadow-card: 0 4px 24px -4px hsl(220 85% 55% / 0.1), 0 0 0 1px hsl(220 20% 90% / 0.5);
-    --shadow-card-hover: 0 16px 40px -8px hsl(220 85% 55% / 0.2), 0 0 0 1px hsl(220 85% 55% / 0.2);
-    
-    /* Glass effect */
-    --glass-bg: hsl(0 0% 100% / 0.7);
-    --glass-border: hsl(0 0% 100% / 0.5);
-    
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 62%) 0%, hsl(255 72% 60%) 50%, hsl(270 72% 62%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(228 30% 6%) 0%, hsl(238 26% 9%) 50%, hsl(228 30% 6%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(220 85% 62%) 0%, hsl(255 72% 60%) 50%, hsl(270 72% 62%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(228 26% 11%) 0%, hsl(228 24% 9%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(220 85% 55% / 0.12) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(270 72% 55% / 0.1) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(255 72% 55% / 0.08) 0px, transparent 50%),
+                     radial-gradient(at 80% 50%, hsl(220 85% 55% / 0.06) 0px, transparent 50%),
+                     radial-gradient(at 0% 100%, hsl(270 72% 55% / 0.08) 0px, transparent 50%);
+
+    --shadow-sm: 0 1px 2px 0 hsl(228 30% 4% / 0.5);
+    --shadow-md: 0 4px 12px -2px hsl(228 30% 4% / 0.5), 0 2px 4px -2px hsl(228 30% 4% / 0.3);
+    --shadow-lg: 0 12px 24px -4px hsl(228 30% 4% / 0.6), 0 4px 8px -4px hsl(228 30% 4% / 0.4);
+    --shadow-xl: 0 24px 48px -8px hsl(228 30% 4% / 0.7), 0 12px 16px -6px hsl(228 30% 4% / 0.5);
+    --shadow-glow: 0 0 40px -10px hsl(220 85% 62% / 0.5);
+    --shadow-card: 0 4px 24px -4px hsl(220 85% 55% / 0.18), 0 0 0 1px hsl(228 18% 18% / 0.8);
+    --shadow-card-hover: 0 16px 40px -8px hsl(220 85% 55% / 0.35), 0 0 0 1px hsl(220 85% 55% / 0.25);
+
+    /* Dark glass effect */
+    --glass-bg: hsl(228 26% 10% / 0.8);
+    --glass-border: hsl(228 20% 22% / 0.6);
+
     /* Sidebar */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 220 85% 55%;
+    --sidebar-background: 228 30% 7%;
+    --sidebar-foreground: 220 18% 93%;
+    --sidebar-primary: 220 80% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 228 22% 14%;
+    --sidebar-accent-foreground: 220 18% 93%;
+    --sidebar-border: 228 18% 18%;
+    --sidebar-ring: 220 85% 62%;
   }
 
   .dark {
