@@ -93,7 +93,7 @@ const Header = () => {
                   className={`rounded-full px-5 font-semibold transition-all duration-300 ${
                     isScrolled
                       ? "bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105"
-                      : "bg-white text-primary hover:bg-white/90 hover:scale-105 shadow-md"
+                      : "bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105"
                   }`}
                 >
                   Request Demo
