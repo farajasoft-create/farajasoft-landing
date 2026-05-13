@@ -241,7 +241,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section ref={sectionRef} aria-label="Hero" className="relative min-h-screen overflow-hidden">
+    <section ref={sectionRef} aria-label="Hero" className="dark relative min-h-screen overflow-hidden">
       {/* Dark Background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         {/* Base dark navy gradient */}

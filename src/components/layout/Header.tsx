@@ -56,9 +56,7 @@ const Header = () => {
                 src={farajasoftLogo}
                 alt="FarajaSoft Logo"
                 className={`h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled
-                    ? "brightness-0 dark:brightness-0 dark:invert"
-                    : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                  isScrolled ? "" : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                 }`}
               />
             </a>
