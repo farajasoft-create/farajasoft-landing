@@ -241,7 +241,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen overflow-hidden">
+    <section ref={sectionRef} aria-label="Hero" className="relative min-h-screen overflow-hidden">
       {/* Dark Background */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         {/* Base dark navy gradient */}
@@ -401,7 +401,7 @@ const HeroSection = () => {
                   size="lg"
                   className="group bg-gradient-primary text-primary-foreground rounded-full shadow-glow hover:scale-105 transition-all duration-300 w-full sm:w-auto px-7"
                 >
-                  Get Started Free
+                  Get Started
                   <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
@@ -411,10 +411,7 @@ const HeroSection = () => {
                   size="lg"
                   className="group rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-md w-full sm:w-auto px-6"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center mr-2 group-hover:bg-white/25 transition-colors">
-                    <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" />
-                  </div>
-                  Watch Demo
+                  Learn More
                 </Button>
               </a>
             </motion.div>

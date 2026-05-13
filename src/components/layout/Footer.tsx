@@ -1,5 +1,16 @@
-import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Globe } from "lucide-react";
 import farajasoftLogo from "@/assets/farajasoft-logo.png";
+
+const integrations = [
+  { name: "M-Pesa", desc: "Mobile Payments" },
+  { name: "KRA iTax", desc: "Tax Compliance" },
+  { name: "NHIF", desc: "Health Insurance" },
+  { name: "NSSF", desc: "Social Security" },
+  { name: "Xero", desc: "Accounting" },
+  { name: "QuickBooks", desc: "Accounting" },
+  { name: "Equity Bank", desc: "Banking" },
+  { name: "KCB", desc: "Banking" },
+];
 
 const Footer = () => {
   const socialLinks = [
@@ -10,28 +21,38 @@ const Footer = () => {
   ];
 
   const footerLinks = {
-    product: [
-      { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Integrations", href: "#" },
-      { label: "Updates", href: "#" },
+    solutions: [
+      { label: "Core HR Management", href: "#features" },
+      { label: "Payroll Processing", href: "#features" },
+      { label: "Leave & Attendance", href: "#features" },
+      { label: "Performance Reviews", href: "#features" },
+      { label: "Recruitment & Onboarding", href: "#features" },
+      { label: "Employee Self-Service", href: "#features" },
+      { label: "Reports & Analytics", href: "#features" },
     ],
     company: [
-      { label: "About", href: "#about" },
-      { label: "Careers", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Press", href: "#" },
+      { label: "About FarajaSoft", href: "#about" },
+      { label: "Careers", href: "mailto:info@farajasoft.com?subject=Careers%20Enquiry" },
+      { label: "Blog & Insights", href: "#" },
+      { label: "Partner Programme", href: "mailto:info@farajasoft.com?subject=Partnership%20Enquiry" },
+      { label: "Press & Media", href: "mailto:info@farajasoft.com?subject=Press%20Enquiry" },
+      { label: "Contact Us", href: "#contact" },
     ],
     resources: [
       { label: "Documentation", href: "#" },
       { label: "Help Center", href: "#" },
       { label: "API Reference", href: "#" },
-      { label: "Status", href: "#" },
+      { label: "System Status", href: "#" },
+      { label: "Release Notes", href: "#" },
+      { label: "Webinars & Training", href: "#" },
     ],
     legal: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Cookie Policy", href: "#" },
+      { label: "Privacy Policy", href: "/legal/privacy-policy" },
+      { label: "Terms of Service", href: "/legal/terms-of-service" },
+      { label: "Cookie Policy", href: "/legal/cookie-policy" },
+      { label: "Data Processing Agreement", href: "/legal/data-processing-agreement" },
+      { label: "GDPR Statement", href: "/legal/gdpr" },
+      { label: "Security Overview", href: "/legal/security" },
     ],
   };
 
@@ -106,6 +127,18 @@ const Footer = () => {
                 Nairobi, Kenya
               </div>
             </div>
+
+            {/* Trust badges */}
+            <div className="mt-8 flex flex-col gap-2">
+              <div className="inline-flex items-center gap-2 text-xs text-primary-foreground/40">
+                <ShieldCheck className="w-3.5 h-3.5 text-primary/60" />
+                KRA-compliant payroll processing
+              </div>
+              <div className="inline-flex items-center gap-2 text-xs text-primary-foreground/40">
+                <Globe className="w-3.5 h-3.5 text-primary/60" />
+                GDPR & Kenya Data Protection Act
+              </div>
+            </div>
           </div>
 
           {/* Link columns */}
@@ -131,10 +164,30 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* Integrations strip */}
+        <div className="py-8 border-t border-primary-foreground/8">
+          <p className="text-xs uppercase tracking-wider text-primary-foreground/30 font-semibold mb-5">
+            Integrations &amp; Compliance Partners
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {integrations.map((item) => (
+              <div
+                key={item.name}
+                className="inline-flex flex-col items-center justify-center px-4 py-2.5 rounded-lg bg-primary-foreground/5 border border-primary-foreground/8 hover:border-primary/40 hover:bg-primary/5 transition-all duration-200 cursor-default group"
+              >
+                <span className="text-xs font-semibold text-primary-foreground/70 group-hover:text-primary transition-colors">
+                  {item.name}
+                </span>
+                <span className="text-[10px] text-primary-foreground/30 mt-0.5">{item.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div className="py-8 border-t border-primary-foreground/8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/40">
-            © {new Date().getFullYear()} FarajaSoft Limited. All rights reserved.
+            © {new Date().getFullYear()} FarajaSoft Limited. All rights reserved. Registered in Kenya.
           </p>
           <div className="flex items-center gap-2">
             {socialLinks.map((social) => (

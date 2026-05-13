@@ -87,7 +87,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-gradient-hero relative overflow-hidden">
+    <section id="contact" aria-label="Contact Us" className="py-24 lg:py-32 bg-gradient-hero relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px]" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
