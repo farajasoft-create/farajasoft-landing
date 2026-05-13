@@ -311,7 +311,7 @@ const HeroSection = () => {
           >
             {/* Trust badge */}
             <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 dark:bg-white/5 bg-black/5 backdrop-blur-xl border border-primary/20 rounded-full text-sm font-medium mb-7 shadow-sm">
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-background/60 backdrop-blur-xl border border-border shadow-sm rounded-full text-sm font-medium mb-7">
                 <div className="flex -space-x-1.5">
                   {["J", "A", "M"].map((letter, i) => (
                     <div
@@ -353,10 +353,10 @@ const HeroSection = () => {
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-2 px-3.5 py-2 dark:bg-white/6 bg-white backdrop-blur-md rounded-xl dark:border-white/12 border-border shadow-sm"
+                  className="flex items-center gap-2 px-3.5 py-2 bg-background/70 backdrop-blur-md rounded-xl border border-border shadow-sm"
                 >
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                  <span className="text-sm font-medium dark:text-white/90 text-foreground/80">{item}</span>
+                  <span className="text-sm font-medium text-foreground/85">{item}</span>
                 </div>
               ))}
             </motion.div>
