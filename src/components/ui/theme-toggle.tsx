@@ -22,8 +22,10 @@ const ThemeToggle = ({ onDarkHero = false }: ThemeToggleProps) => {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       className={`relative w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 ${
-        onDarkHero
+        onDarkHero && isDark
           ? "bg-white/10 hover:bg-white/20 text-white"
+          : onDarkHero && !isDark
+          ? "bg-black/8 hover:bg-black/12 text-foreground"
           : "bg-muted hover:bg-muted/70 text-foreground"
       }`}
     >
