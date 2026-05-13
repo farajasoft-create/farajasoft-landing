@@ -45,11 +45,11 @@ const FAQItem = ({ faq, index }: { faq: (typeof faqs)[0]; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.07, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-      className="border border-white/10 rounded-2xl overflow-hidden"
+      className="border border-border rounded-2xl overflow-hidden bg-card"
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left hover:bg-white/5 transition-colors duration-200"
+        className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left hover:bg-muted/60 transition-colors duration-200"
       >
         <span className="font-display font-semibold text-foreground text-sm sm:text-base">
           {faq.question}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ui/theme-toggle";
 import { Menu, X, ChevronRight } from "lucide-react";
 import farajasoftLogo from "@/assets/farajasoft-logo.png";
 
@@ -55,7 +56,9 @@ const Header = () => {
                 src={farajasoftLogo}
                 alt="FarajaSoft Logo"
                 className={`h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
-                  isScrolled ? "" : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                  isScrolled
+                    ? "brightness-0 dark:brightness-0 dark:invert"
+                    : "drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
                 }`}
               />
             </a>
@@ -81,8 +84,9 @@ const Header = () => {
               ))}
             </nav>
 
-            {/* CTA */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* CTA + Toggle */}
+            <div className="hidden lg:flex items-center gap-2">
+              <ThemeToggle onDarkHero={!isScrolled} />
               <a
                 href="https://wa.me/254752772590?text=Hello%20FarajaSoft%2C%20I%20would%20like%20to%20request%20a%20demo."
                 target="_blank"
@@ -90,31 +94,30 @@ const Header = () => {
               >
                 <Button
                   size="sm"
-                  className={`rounded-full px-5 font-semibold transition-all duration-300 ${
-                    isScrolled
-                      ? "bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105"
-                      : "bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105"
-                  }`}
+                  className="rounded-full px-5 font-semibold bg-gradient-primary text-primary-foreground shadow-glow hover:scale-105 transition-all duration-300"
                 >
                   Request Demo
                 </Button>
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                isScrolled
-                  ? "text-foreground hover:bg-muted"
-                  : "text-white hover:bg-white/10"
-              }`}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
+            {/* Mobile: Toggle + Menu button */}
+            <div className="lg:hidden flex items-center gap-1">
+              <ThemeToggle onDarkHero={!isScrolled} />
+              <button
+                className={`p-2 rounded-lg transition-colors ${
+                  isScrolled
+                    ? "text-foreground hover:bg-muted"
+                    : "text-white hover:bg-white/10"
+                }`}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+              >
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
