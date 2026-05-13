@@ -40,7 +40,7 @@ const IntegrationsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.07, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/8 transition-all duration-300 group"
+              className="flex flex-col items-center gap-2 p-5 rounded-2xl bg-card border border-border hover:border-primary/30 hover:bg-muted/50 transition-all duration-300 group"
             >
               <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <span className="font-display text-xs font-extrabold text-primary-foreground">

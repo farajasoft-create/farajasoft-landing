@@ -89,7 +89,7 @@ const PricingSection = () => {
               className={`relative rounded-3xl p-8 flex flex-col gap-6 transition-all duration-300 ${
                 plan.highlighted
                   ? "bg-gradient-primary text-primary-foreground shadow-glow scale-105 border-0"
-                  : "bg-white/5 border border-white/10 hover:border-primary/30 text-foreground"
+                  : "bg-card border border-border hover:border-primary/30 text-foreground shadow-sm"
               }`}
             >
               {plan.badge && (

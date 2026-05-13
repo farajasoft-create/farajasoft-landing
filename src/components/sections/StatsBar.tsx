@@ -11,7 +11,7 @@ const stats = [
 
 const StatsBar = () => {
   return (
-    <section className="py-10 border-y border-white/8 bg-card/60 backdrop-blur-sm relative overflow-hidden">
+    <section className="py-10 border-y border-border bg-card/60 backdrop-blur-sm relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-mesh opacity-20" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <FadeUp>

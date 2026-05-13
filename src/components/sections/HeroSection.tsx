@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -242,56 +242,23 @@ const HeroSection = () => {
 
   return (
     <section ref={sectionRef} aria-label="Hero" className="relative min-h-screen overflow-hidden">
-      {/* Dark Background */}
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        {/* Base dark navy gradient */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(135deg, #06091a 0%, #0b0f26 45%, #070a1d 100%)" }}
-        />
+      {/* Background — dark mode */}
+      <motion.div className="absolute inset-0 z-0 dark:opacity-100 opacity-0 transition-opacity duration-300" style={{ y: bgY }}>
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #06091a 0%, #0b0f26 45%, #070a1d 100%)" }} />
+        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.07) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
+        <div className="absolute rounded-full" style={{ top: "-25%", left: "-15%", width: "900px", height: "900px", background: "radial-gradient(circle, rgba(109,40,217,0.22) 0%, transparent 65%)" }} />
+        <div className="absolute rounded-full" style={{ bottom: "-25%", right: "-5%", width: "750px", height: "750px", background: "radial-gradient(circle, rgba(67,56,202,0.2) 0%, transparent 65%)" }} />
+        <div className="absolute rounded-full" style={{ top: "25%", right: "-10%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 65%)" }} />
+        <div className="absolute inset-x-0 top-0 h-40" style={{ background: "linear-gradient(180deg, rgba(6,9,26,0.5) 0%, transparent 100%)" }} />
+      </motion.div>
 
-        {/* Subtle grid lines */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.07) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
-        />
-
-        {/* Purple glow — top left */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            top: "-25%", left: "-15%", width: "900px", height: "900px",
-            background: "radial-gradient(circle, rgba(109,40,217,0.22) 0%, transparent 65%)",
-          }}
-        />
-
-        {/* Indigo glow — bottom right */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            bottom: "-25%", right: "-5%", width: "750px", height: "750px",
-            background: "radial-gradient(circle, rgba(67,56,202,0.2) 0%, transparent 65%)",
-          }}
-        />
-
-        {/* Violet accent — center right */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            top: "25%", right: "-10%", width: "600px", height: "600px",
-            background: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 65%)",
-          }}
-        />
-
-        {/* Top vignette for nav readability */}
-        <div
-          className="absolute inset-x-0 top-0 h-40"
-          style={{ background: "linear-gradient(180deg, rgba(6,9,26,0.5) 0%, transparent 100%)" }}
-        />
+      {/* Background — light mode */}
+      <motion.div className="absolute inset-0 z-0 dark:opacity-0 opacity-100 transition-opacity duration-300" style={{ y: bgY }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/40 to-violet-50/30" />
+        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px)", backgroundSize: "64px 64px" }} />
+        <div className="absolute rounded-full" style={{ top: "-25%", left: "-15%", width: "900px", height: "900px", background: "radial-gradient(circle, rgba(109,40,217,0.07) 0%, transparent 65%)" }} />
+        <div className="absolute rounded-full" style={{ bottom: "-25%", right: "-5%", width: "750px", height: "750px", background: "radial-gradient(circle, rgba(67,56,202,0.06) 0%, transparent 65%)" }} />
+        <div className="absolute rounded-full" style={{ top: "25%", right: "-10%", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 65%)" }} />
       </motion.div>
 
       {/* Ambient orbs */}
@@ -342,31 +309,12 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Trust badge */}
-            <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-white/5 backdrop-blur-xl border border-primary/25 rounded-full text-sm font-medium mb-7 shadow-lg">
-                <div className="flex -space-x-1.5">
-                  {["J", "A", "M"].map((letter, i) => (
-                    <div
-                      key={i}
-                      className="w-6 h-6 rounded-full bg-gradient-primary border-2 border-background flex items-center justify-center text-[8px] text-primary-foreground font-bold"
-                    >
-                      {letter}
-                    </div>
-                  ))}
-                </div>
-                <span className="text-foreground/90">Trusted by 500+ African Businesses</span>
-                <div className="flex items-center gap-0.5 text-amber-400">
-                  <Star className="w-3.5 h-3.5 fill-current" />
-                  <span className="text-xs font-semibold">4.8</span>
-                </div>
-              </div>
-            </motion.div>
+
 
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="font-display text-[2.6rem] sm:text-5xl lg:text-[3.75rem] xl:text-[4rem] font-extrabold text-white leading-[1.07] tracking-tight mb-5"
+              className="font-display text-[2.6rem] sm:text-5xl lg:text-[3.75rem] xl:text-[4rem] font-extrabold dark:text-white text-foreground leading-[1.07] tracking-tight mb-5"
             >
               Smart HR & Payroll
               <br />
@@ -375,7 +323,7 @@ const HeroSection = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg text-white/65 mb-7 max-w-xl leading-relaxed"
+              className="text-lg dark:text-white/65 text-foreground/70 mb-7 max-w-xl leading-relaxed"
             >
               Simplify people management, automate payroll, and gain real-time insights.
               Your all-in-one HRMS platform for the modern African workplace.
@@ -386,10 +334,10 @@ const HeroSection = () => {
               {highlights.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-2 px-3.5 py-2 bg-white/6 backdrop-blur-md rounded-xl border border-white/12 shadow-sm"
+                  className="flex items-center gap-2 px-3.5 py-2 bg-background/70 backdrop-blur-md rounded-xl border border-border shadow-sm"
                 >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span className="text-sm font-medium text-white/90">{item}</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                  <span className="text-sm font-medium text-foreground/85">{item}</span>
                 </div>
               ))}
             </motion.div>
@@ -409,7 +357,7 @@ const HeroSection = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="group rounded-full bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-md w-full sm:w-auto px-6"
+                  className="group rounded-full dark:bg-white/10 dark:border-white/20 dark:text-white dark:hover:bg-white/20 bg-foreground/8 border-border text-foreground hover:bg-foreground/12 backdrop-blur-md w-full sm:w-auto px-6"
                 >
                   Learn More
                 </Button>
