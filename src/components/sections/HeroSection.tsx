@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, CheckCircle2, Star } from "lucide-react";
+import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
@@ -309,26 +309,7 @@ const HeroSection = () => {
             initial="hidden"
             animate="visible"
           >
-            {/* Trust badge */}
-            <motion.div variants={itemVariants}>
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-background/60 backdrop-blur-xl border border-border shadow-sm rounded-full text-sm font-medium mb-7">
-                <div className="flex -space-x-1.5">
-                  {["J", "A", "M"].map((letter, i) => (
-                    <div
-                      key={i}
-                      className="w-6 h-6 rounded-full bg-gradient-primary border-2 border-background flex items-center justify-center text-[8px] text-primary-foreground font-bold"
-                    >
-                      {letter}
-                    </div>
-                  ))}
-                </div>
-                <span className="text-foreground/90">Trusted by 500+ African Businesses</span>
-                <div className="flex items-center gap-0.5 text-amber-400">
-                  <Star className="w-3.5 h-3.5 fill-current" />
-                  <span className="text-xs font-semibold">4.8</span>
-                </div>
-              </div>
-            </motion.div>
+
 
             {/* Headline */}
             <motion.h1
