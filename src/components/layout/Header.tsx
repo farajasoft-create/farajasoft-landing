@@ -73,8 +73,8 @@ const Header = () => {
                         ? "bg-primary/15 text-primary"
                         : "text-foreground/65 hover:text-foreground hover:bg-muted/60"
                       : activeSection === link.id
-                        ? "bg-white/15 text-white"
-                        : "text-white/80 hover:text-white hover:bg-white/10"
+                        ? "dark:bg-white/15 dark:text-white bg-primary/10 text-primary"
+                        : "dark:text-white/80 dark:hover:text-white dark:hover:bg-white/10 text-foreground/70 hover:text-foreground hover:bg-black/5"
                   }`}
                 >
                   {link.label}
@@ -106,7 +106,7 @@ const Header = () => {
                 className={`p-2 rounded-lg transition-colors ${
                   isScrolled
                     ? "text-foreground hover:bg-muted"
-                    : "text-white hover:bg-white/10"
+                    : "dark:text-white dark:hover:bg-white/10 text-foreground hover:bg-black/5"
                 }`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
