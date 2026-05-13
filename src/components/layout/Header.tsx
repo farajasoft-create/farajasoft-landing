@@ -61,7 +61,7 @@ const Header = () => {
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-0.5">
+            <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-0.5">
               {navLinks.map((link) => (
                 <a
                   key={link.href + link.id}
@@ -109,7 +109,9 @@ const Header = () => {
                   : "text-white hover:bg-white/10"
               }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -133,7 +135,7 @@ const Header = () => {
             <img src={farajasoftLogo} alt="FarajaSoft Logo" className="h-10 w-auto" />
           </div>
 
-          <nav className="space-y-1">
+          <nav id="mobile-menu" aria-label="Mobile navigation" className="space-y-1">
             {navLinks.map((link, i) => (
               <a
                 key={link.href + link.id}
