@@ -2,7 +2,13 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, ArrowRight, Twitter, Facebook, Instagram } from "lucide-react";
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.55V6.79a4.85 4.85 0 0 1-1.07-.1z"/>
+  </svg>
+);
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -80,10 +86,10 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { name: "X", href: "https://twitter.com/Farajasoft" },
-    { name: "TikTok", href: "https://tiktok.com/@Farajasoft" },
-    { name: "Instagram", href: "https://instagram.com/Farajasoft" },
-    { name: "Facebook", href: "https://facebook.com/FarajaSoft" },
+    { name: "X / Twitter", href: "https://twitter.com/Farajasoft", icon: Twitter },
+    { name: "TikTok", href: "https://tiktok.com/@Farajasoft", icon: TikTokIcon },
+    { name: "Instagram", href: "https://instagram.com/Farajasoft", icon: Instagram },
+    { name: "Facebook", href: "https://facebook.com/FarajaSoft", icon: Facebook },
   ];
 
   return (
@@ -155,9 +161,9 @@ const ContactSection = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-11 h-11 rounded-xl glass border border-border/50 flex items-center justify-center text-sm font-semibold text-muted-foreground hover:text-primary hover:border-primary/50 hover:shadow-glow transition-all duration-300"
+                      className="w-11 h-11 rounded-xl glass border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 hover:shadow-glow transition-all duration-300"
                     >
-                      {social.name[0]}
+                      <social.icon className="w-4 h-4" />
                     </a>
                   ))}
                 </div>
