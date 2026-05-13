@@ -1,4 +1,4 @@
-import { Target, Users, Zap, Shield, ArrowUpRight } from "lucide-react";
+import { Target, Users, Workflow, Shield, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeUp, SlideIn, StaggerContainer, staggerChild, ParallaxLayer } from "@/components/motion/animations";
 
@@ -6,7 +6,7 @@ const AboutSection = () => {
   const values = [
     { icon: Target, title: "Efficiency First", description: "Reduce administrative burden by up to 70% with smart automation." },
     { icon: Shield, title: "Full Compliance", description: "Stay compliant with NHIF, NSSF, PAYE, and labor regulations." },
-    { icon: Zap, title: "Automation", description: "From payroll calculations to leave management—fully automated." },
+    { icon: Workflow, title: "Automation", description: "From payroll calculations to leave management—fully automated." },
     { icon: Users, title: "People-First", description: "Intuitive self-service portals built for your employees." },
   ];
 

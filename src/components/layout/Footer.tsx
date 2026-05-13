@@ -1,5 +1,11 @@
-import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Globe } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Globe, Twitter, Facebook, Instagram } from "lucide-react";
 import farajasoftLogo from "@/assets/farajasoft-logo.png";
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.55V6.79a4.85 4.85 0 0 1-1.07-.1z"/>
+  </svg>
+);
 
 const integrations = [
   { name: "M-Pesa", desc: "Mobile Payments" },
@@ -14,10 +20,10 @@ const integrations = [
 
 const Footer = () => {
   const socialLinks = [
-    { name: "X", href: "https://twitter.com/Farajasoft" },
-    { name: "TikTok", href: "https://tiktok.com/@Farajasoft" },
-    { name: "Instagram", href: "https://instagram.com/Farajasoft" },
-    { name: "Facebook", href: "https://facebook.com/FarajaSoft" },
+    { name: "X / Twitter", href: "https://twitter.com/Farajasoft", icon: Twitter },
+    { name: "TikTok", href: "https://tiktok.com/@Farajasoft", icon: TikTokIcon },
+    { name: "Instagram", href: "https://instagram.com/Farajasoft", icon: Instagram },
+    { name: "Facebook", href: "https://facebook.com/FarajaSoft", icon: Facebook },
   ];
 
   const footerLinks = {
@@ -196,10 +202,10 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-primary-foreground/8 flex items-center justify-center text-xs font-semibold text-primary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-primary-foreground/8 flex items-center justify-center text-primary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 aria-label={social.name}
               >
-                {social.name[0]}
+                <social.icon className="w-4 h-4" />
               </a>
             ))}
           </div>
