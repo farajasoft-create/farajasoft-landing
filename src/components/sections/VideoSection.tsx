@@ -8,27 +8,27 @@ const slides = [
   {
     label: "Dashboard",
     caption: "At-a-glance HR metrics — headcount, pending leaves, and upcoming payroll — all in one view.",
-    src: "/screenshots/dashboard.png",
+    src: "/screenshots/dashboard.webp",
   },
   {
     label: "Payroll Processing",
     caption: "Run a compliant Kenya payroll in minutes. PAYE, NHIF, NSSF, and HELB calculated automatically.",
-    src: "/screenshots/payroll.png",
+    src: "/screenshots/payroll.webp",
   },
   {
     label: "Employee Directory",
     caption: "Centralise every employee record — contracts, documents, and history — in one searchable place.",
-    src: "/screenshots/employees.png",
+    src: "/screenshots/employees.webp",
   },
   {
     label: "Leave Management",
     caption: "Employees apply, managers approve, balances update — the entire leave workflow, paperless.",
-    src: "/screenshots/leave.png",
+    src: "/screenshots/leave.webp",
   },
   {
     label: "Reports & Analytics",
     caption: "Export P9 forms, statutory returns, and custom HR reports ready for KRA and management.",
-    src: "/screenshots/reports.png",
+    src: "/screenshots/reports.webp",
   },
 ];
 
@@ -38,7 +38,7 @@ const Placeholder = ({ label }: { label: string }) => (
       <div className="w-8 h-8 rounded-lg bg-primary/30" />
     </div>
     <span className="text-sm font-medium text-muted-foreground">{label} screenshot</span>
-    <span className="text-xs text-muted-foreground/50">Drop your PNG into /public/screenshots/</span>
+    <span className="text-xs text-muted-foreground/50">Add your image to /public/screenshots/</span>
   </div>
 );
 
